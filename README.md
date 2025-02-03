@@ -39,19 +39,25 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 ## Estructura del Proyecto
 
 ```
-/
-|-- src/
-|   |-- components/
-|   |   |-- Navbar.jsx
-|   |   |-- Home.jsx
-|   |   |-- CardPizza.jsx
-|   |   |-- Footer.jsx
-|   |   |-- Header.jsx
-|   |-- App.jsx
-|   |-- index.js
-|-- public/
-|-- package.json
-|-- README.md
+┣ 📂public
+┃ ┗ 📜vite.svg
+┣ 📂src
+┃ ┣ 📂assets
+┃ ┃ ┣ 📜Header.jpg
+┃ ┃ ┗ 📜react.svg
+┃ ┣ 📜App.jsx
+┃ ┣ 📜CardPizza.jsx
+┃ ┣ 📜Footer.jsx
+┃ ┣ 📜Header.jsx
+┃ ┣ 📜Home.jsx
+┃ ┣ 📜index.css
+┃ ┣ 📜main.jsx
+┃ ┗ 📜Navbar.jsx
+┣ 📜eslint.config.js
+┣ 📜index.html
+┣ 📜package.json
+┣ 📜README.md
+┗ 📜vite.config.js
 ```
 
 ## Componentes Principales
