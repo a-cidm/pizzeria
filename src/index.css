@@ -1,0 +1,214 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.my-navbar {
+  display: flex;            /* Barra en modo flex */
+  align-items: center;      /* Centra verticalmente */
+  justify-content: space-between; /* Espacia contenedor izquierdo y botón de total */
+  padding: 0 2rem;          /* Margen lateral (opcional) */
+}
+
+.left-container {
+  display: flex; 
+  align-items: center;
+  gap: 1rem;                /* Espacio entre la marca y los botones */
+}
+
+.my-navbar .navbar-brand {
+  margin: 0 0 0 10px;              /* Quita márgenes de marca si es necesario */
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.navbar-buttons {
+  display: flex; 
+  gap: 10px;                /* Espacio horizontal entre botones */
+}
+
+.navbar-buttons .btn {
+  /* Opcional: estilos adicionales para tus botones */
+  font-weight: bold;
+}
+
+/* Elimina márgenes/padding en el header */
+.header-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header {
+  /* Asegura que ocupe todo el ancho real de la pantalla */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 450px; /* Ajusta a la altura deseada */
+  background: url('/src/assets/Header.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Opcional: si quieres la capa oscura encima de la imagen */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Ajusta el texto del header por encima de la capa oscura */
+.header h1,
+.header p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* Si no quieres padding lateral en toda la página, hazlo mínimo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px; /* o 0 si de verdad no quieres nada */
+}
+
+/* Tarjetas */
+.row {
+  padding: 35px 0 0 0;
+}
+
+.col-md-4 {
+  display: flex;
+  flex-direction: column; 
+  /* Deja que Bootstrap maneje el ancho (33%), 
+     o ajusta flex-basis si necesitas un ancho fijo. */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: stretch; /* Para que todas las tarjetas se estiren */
+}
+
+.card {
+  flex: 1;                 /* Ocupa todo el alto disponible en la col */
+  display: flex;
+  flex-direction: column; 
+  text-align: center;
+  max-width: 350px;        /* Si deseas un tope de ancho */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1;                         /* Toma el espacio sobrante para igualar alturas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Distribuye contenido arriba y abajo */
+  padding: 20px;
+}
+
+/* Títulos y texto centrados */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: regular;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.ingredients-title {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  padding-top: 10px;
+  border-top: #cbd0d4 1px solid;
+}
+
+.ingredients-list {
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.0rem;
+  color: #555;
+  padding-bottom: 10px;
+  border-bottom: #cbd0d4 1px solid;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+/* Centra ambos botones juntos */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+}
+
+.btn-primary {
+  background-color: #ff8800;
+  border-color: #ff8800;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: bold;
+  padding: 8px 16px;
+  margin: 0 10px 0 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 20px solid #ffffff;
+  margin-top: auto; 
+  font-size: 1rem;
+}
+
