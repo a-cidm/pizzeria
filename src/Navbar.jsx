@@ -8,7 +8,6 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark my-navbar">
 
-      {/* Contenedor "izquierdo": Marca + Botones Home, Login, etc. */}
       <div className="left-container">
         <span className="navbar-brand">🍕 Pizzería Mamma Mia!</span>
         <button className="btn btn-outline-light">🏠 Home</button>
@@ -25,7 +24,6 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Botón de Total a la derecha */}
       <button className="btn btn-success">🛒 Total: ${total.toLocaleString()}</button>
     </nav>
   );

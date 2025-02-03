@@ -11,35 +11,33 @@ html, body {
 }
 
 .my-navbar {
-  display: flex;            /* Barra en modo flex */
-  align-items: center;      /* Centra verticalmente */
-  justify-content: space-between; /* Espacia contenedor izquierdo y botón de total */
-  padding: 0 2rem;          /* Margen lateral (opcional) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .left-container {
   display: flex; 
   align-items: center;
-  gap: 1rem;                /* Espacio entre la marca y los botones */
+  gap: 1rem;
 }
 
 .my-navbar .navbar-brand {
-  margin: 0 0 0 10px;              /* Quita márgenes de marca si es necesario */
+  margin: 0 0 0 10px;
   font-weight: bold;
   font-size: 1.3rem;
 }
 
 .navbar-buttons {
   display: flex; 
-  gap: 10px;                /* Espacio horizontal entre botones */
+  gap: 10px;
 }
 
 .navbar-buttons .btn {
-  /* Opcional: estilos adicionales para tus botones */
   font-weight: bold;
 }
 
-/* Elimina márgenes/padding en el header */
 .header-container {
   margin: 0;
   padding: 0;
@@ -47,11 +45,10 @@ html, body {
 }
 
 .header {
-  /* Asegura que ocupe todo el ancho real de la pantalla */
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 450px; /* Ajusta a la altura deseada */
+  height: 450px;
   background: url('/src/assets/Header.jpg') center/cover no-repeat;
   color: white;
   display: flex;
@@ -61,7 +58,6 @@ html, body {
   position: relative;
 }
 
-/* Opcional: si quieres la capa oscura encima de la imagen */
 .header::before {
   content: "";
   position: absolute;
@@ -72,7 +68,6 @@ html, body {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* Ajusta el texto del header por encima de la capa oscura */
 .header h1,
 .header p {
   position: relative;
@@ -80,14 +75,12 @@ html, body {
   margin: 0;
 }
 
-/* Si no quieres padding lateral en toda la página, hazlo mínimo */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px; /* o 0 si de verdad no quieres nada */
+  padding: 0 10px;
 }
 
-/* Tarjetas */
 .row {
   padding: 35px 0 0 0;
 }
@@ -95,8 +88,6 @@ html, body {
 .col-md-4 {
   display: flex;
   flex-direction: column; 
-  /* Deja que Bootstrap maneje el ancho (33%), 
-     o ajusta flex-basis si necesitas un ancho fijo. */
 }
 
 .card-container {
@@ -105,15 +96,15 @@ html, body {
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
-  align-items: stretch; /* Para que todas las tarjetas se estiren */
+  align-items: stretch;
 }
 
 .card {
-  flex: 1;                 /* Ocupa todo el alto disponible en la col */
+  flex: 1;
   display: flex;
   flex-direction: column; 
   text-align: center;
-  max-width: 350px;        /* Si deseas un tope de ancho */
+  max-width: 350px;
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
@@ -133,14 +124,13 @@ html, body {
 }
 
 .card-body {
-  flex: 1;                         /* Toma el espacio sobrante para igualar alturas */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  /* Distribuye contenido arriba y abajo */
+  justify-content: space-between;
   padding: 20px;
 }
 
-/* Títulos y texto centrados */
 .card-title {
   font-size: 1.4rem;
   font-weight: regular;
@@ -171,7 +161,6 @@ html, body {
   margin: 0 0 15px 0;
 }
 
-/* Centra ambos botones juntos */
 .card-buttons {
   display: flex;
   justify-content: center;
@@ -179,7 +168,6 @@ html, body {
   margin-top: 15px;
 }
 
-/* Botones */
 .buttons {
   display: flex;
   justify-content: center;
@@ -201,7 +189,6 @@ html, body {
   margin: 0 10px 0 10px;
 }
 
-/* Footer */
 footer {
   background-color: #343a40;
   color: white;
