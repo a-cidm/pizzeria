@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container my-3">
         <div className="row">
           <div className="col-md-4">
             <CardPizza 

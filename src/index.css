@@ -1,14 +1,18 @@
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
+}
+
+main {
+  flex: 1;
 }
 
 .my-navbar {
@@ -194,7 +198,7 @@ footer {
   background-color: #343a40;
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 20 0;
   border-top: 20px solid #ffffff;
   margin-top: auto;
   font-size: 1rem;
