@@ -4,7 +4,8 @@
   min-height: 100%;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -18,7 +19,7 @@ html, body {
 }
 
 .left-container {
-  display: flex; 
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -30,7 +31,7 @@ html, body {
 }
 
 .navbar-buttons {
-  display: flex; 
+  display: flex;
   gap: 10px;
 }
 
@@ -63,7 +64,7 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
 }
@@ -87,7 +88,7 @@ html, body {
 
 .col-md-4 {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .card-container {
@@ -102,14 +103,14 @@ html, body {
 .card {
   flex: 1;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   text-align: center;
   max-width: 350px;
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s;
 }
 
@@ -195,7 +196,6 @@ footer {
   text-align: center;
   padding: 20px 0;
   border-top: 20px solid #ffffff;
-  margin-top: auto; 
+  margin-top: auto;
   font-size: 1rem;
 }
-
