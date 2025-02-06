@@ -1,3 +1,4 @@
+//LoginPage.jsx
 import { useState } from "react";
 
 const LoginPage = () => {
@@ -18,10 +19,10 @@ const LoginPage = () => {
       return;
     }
 
-    // Si pasa las validaciones, mostramos un mensaje de éxito
+    // Si pasa las validaciones, mostrar un mensaje de éxito
     alert("¡Login exitoso!");
 
-    // Opcional: Limpieza de campos
+    // Limpieza de campos
     setEmail("");
     setPassword("");
   };
