@@ -1,4 +1,4 @@
-# Pizzería Mamma Mia!
+# Pizzería Mamma Mia! (Hito 2)
 
 Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
 
@@ -8,6 +8,8 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 -   Lista de pizzas con descripciones e ingredientes.
 -   Botones para ver más detalles y añadir al carrito.
 -   Navbar con opciones de inicio de sesión y visualización del total del carrito.
+-   **New!** Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
+-   **New!** Componente Login que contiene un formulario con los campos Email y Contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
 
 ## Tecnologías Utilizadas
 
@@ -47,6 +49,8 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 ┃ ┃ ┗ 📜react.svg
 ┃ ┣ 📜App.jsx
 ┃ ┣ 📜CardPizza.jsx
+┃ ┣ 📜RegisterPage.jsx *
+┃ ┣ 📜LoginPage.jsx *
 ┃ ┣ 📜Footer.jsx
 ┃ ┣ 📜Header.jsx
 ┃ ┣ 📜Home.jsx
@@ -86,7 +90,13 @@ Pie de página con información de derechos reservados.
 
 Encabezado principal con el nombre y lema de la pizzería.
 
-## Captura de Pantalla
+### **New!** `RegisterPage.jsx`
+
+Componente que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña.
+
+### **New!** `LoginPage.jsx`
+
+Componente que contiene un formulario con los campos Email y Contraseña.
 
 ## Contribución
 
@@ -99,3 +109,7 @@ Si deseas contribuir a este proyecto, puedes realizar un fork del repositorio y 
 ## Licencia
 
 Este proyecto está bajo la licencia MIT.
+
+## Versión 2
+
+Este proyecto es presentado para el Hito 2.
