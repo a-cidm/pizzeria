@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validaciones con alert()
     if (!email || !password) {
-      alert('Todos los campos son obligatorios');
+      alert("Todos los campos son obligatorios");
       return;
     }
 
     if (password.length < 6) {
-      alert('La contraseña debe tener al menos 6 caracteres');
+      alert("La contraseña debe tener al menos 6 caracteres");
       return;
     }
 
     // Si pasa las validaciones, mostramos un mensaje de éxito
-    alert('¡Login exitoso!');
+    alert("¡Login exitoso!");
 
     // Opcional: Limpieza de campos
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
   };
 
   return (
