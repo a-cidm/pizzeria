@@ -1,37 +1,37 @@
 //RegisterPage.jsx
-import { useState } from 'react';
+import { useState } from "react";
 
 const RegisterPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validaciones con alert()
     if (!email || !password || !confirmPassword) {
-      alert('Todos los campos son obligatorios');
+      alert("Todos los campos son obligatorios");
       return;
     }
 
     if (password.length < 6) {
-      alert('La contraseña debe tener al menos 6 caracteres');
+      alert("La contraseña debe tener al menos 6 caracteres");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert('Las contraseñas no coinciden');
+      alert("Las contraseñas no coinciden");
       return;
     }
 
     // Si pasa las validaciones, mostrar un mensaje de éxito
-    alert('¡Registro exitoso!');
+    alert("¡Registro exitoso!");
 
     // Limpieza de valores
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (

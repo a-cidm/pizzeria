@@ -1,5 +1,5 @@
 // CardPizza.jsx
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 CardPizza.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
@@ -22,6 +22,5 @@ const CardPizza = ({ name, price, ingredients, img }) => (
     </div>
   </div>
 );
-
 
 export default CardPizza;
