@@ -116,6 +116,7 @@ main {
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s;
+  margin-bottom: 10%;
 }
 
 .card:hover {
@@ -202,4 +203,52 @@ footer {
   border-top: 20px solid #ffffff;
   margin-top: auto;
   font-size: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-details {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+}
+
+.cart-actions button {
+  margin: 0 5px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.ingredients-list li {
+  padding-left: 20px;
+  position: relative;
+  font-size: 1rem;
+  color: #555;
+}
+
+.ingredients-list li::before {
+  content: "🍕";
+  position: absolute;
+  left: 0;
 }
