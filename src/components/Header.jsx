@@ -1,5 +1,5 @@
 // Header.jsx
-import "./index.css";
+import "../index.css";
 
 const Header = () => (
   <header className="header">
