@@ -1,4 +1,4 @@
-# Pizzería Mamma Mia! (Hito 2)
+# Pizzería Mamma Mia! (Hito 3)
 
 Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
 
@@ -8,8 +8,11 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 -   Lista de pizzas con descripciones e ingredientes.
 -   Botones para ver más detalles y añadir al carrito.
 -   Navbar con opciones de inicio de sesión y visualización del total del carrito.
--   **New!** Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
--   **New!** Componente Login que contiene un formulario con los campos Email y Contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
+-   Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
+-   Componente Login que contiene un formulario con los campos Email y Contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
+-   **New!** Recorre el array de pizzas y renderiza un componente ..
+-   **New!** Muestra la información de cada pizza utilizando props y renderiza los ingredientes en una lista.
+-   **New!** Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad y calcula el total de la compra.
 
 ## Tecnologías Utilizadas
 
@@ -47,16 +50,19 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 ┃ ┣ 📂assets
 ┃ ┃ ┣ 📜Header.jpg
 ┃ ┃ ┗ 📜react.svg
+┃ ┣ 📂components
+┃ ┃ ┣ 📜CardPizza.jsx
+┃ ┃ ┣ 📜RegisterPage.jsx
+┃ ┃ ┣ 📜LoginPage.jsx
+┃ ┃ ┣ 📜Footer.jsx
+┃ ┃ ┣ 📜Header.jsx
+┃ ┃ ┣ 📜Home.jsx
+┃ ┃ ┗ 📜Navbar.jsx
+┃ ┣ 📂data
+┃ ┃ ┣ 📜pizzas.js
 ┃ ┣ 📜App.jsx
-┃ ┣ 📜CardPizza.jsx
-┃ ┣ 📜RegisterPage.jsx *
-┃ ┣ 📜LoginPage.jsx *
-┃ ┣ 📜Footer.jsx
-┃ ┣ 📜Header.jsx
-┃ ┣ 📜Home.jsx
 ┃ ┣ 📜index.css
 ┃ ┣ 📜main.jsx
-┃ ┗ 📜Navbar.jsx
 ┣ 📜eslint.config.js
 ┣ 📜index.html
 ┣ 📜package.json
@@ -81,6 +87,7 @@ Contiene el encabezado y la lista de pizzas disponibles.
 ### `CardPizza.jsx`
 
 Componente reutilizable para mostrar la información de cada pizza.
+**New! iterando por los ingredientes para renderizarlos en una lista**
 
 ### `Footer.jsx`
 
@@ -90,17 +97,22 @@ Pie de página con información de derechos reservados.
 
 Encabezado principal con el nombre y lema de la pizzería.
 
-### **New!** `RegisterPage.jsx`
+### `RegisterPage.jsx`
 
 Componente que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña.
 
-### **New!** `LoginPage.jsx`
+### `LoginPage.jsx`
 
 Componente que contiene un formulario con los campos Email y Contraseña.
 
+### **New!** `Cart.jsx`
+
+Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad de pizzas y calcula el total de la compra.
+
+
 ## Contribución
 
-Si deseas contribuir a este proyecto, puedes realizar un fork del repositorio y enviar un pull request con mejoras o nuevas funcionalidades.
+Este proyecto es parte de un estudio académico y, por lo tanto, actualmente no acepta contribuciones externas.
 
 ## Autor
 
@@ -110,6 +122,6 @@ Si deseas contribuir a este proyecto, puedes realizar un fork del repositorio y 
 
 Este proyecto está bajo la licencia MIT.
 
-## Versión 2
+## Versión 3
 
-Este proyecto es presentado para el Hito 2.
+Este proyecto es presentado para el Hito 3.
