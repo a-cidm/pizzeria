@@ -103,11 +103,7 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router
 
 Componente principal que integra la barra de navegación y define las rutas de la aplicación.
 
-<<<<<<< HEAD
 ### `Navbar.jsx` **Update!**
-=======
-### `Navbar.jsx` **New!**
->>>>>>> c3973931884ae07d5ca50f9bad12a5c8bbd2ef6c
 
 Muestra el nombre de la pizzería, botones de navegación y el total del carrito. Los botones de navegación redirigen a las rutas establecidas.
 
