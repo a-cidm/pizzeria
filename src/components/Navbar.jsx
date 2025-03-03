@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Navbar.jsx
 const Navbar = () => {
   const total = 25000;
@@ -7,23 +9,22 @@ const Navbar = () => {
     <nav className="navbar navbar-dark bg-dark my-navbar">
       <div className="left-container">
         <span className="navbar-brand">🍕 Pizzería Mamma Mia!</span>
-        <button className="btn btn-outline-light">🏠 Home</button>
+        <Link to="/" className="btn btn-outline-light">🏠 Home</Link>
         {token ? (
           <>
-            <button className="btn btn-outline-light">🔓 Profile</button>
+            <Link to="/profile" className="btn btn-outline-light">🔓 Profile</Link>
             <button className="btn btn-outline-light">🔒 Logout</button>
           </>
         ) : (
           <>
-            <button className="btn btn-outline-light">🔐 Login</button>
-            <button className="btn btn-outline-light">🔐 Register</button>
+            <Link to="/login" className="btn btn-outline-light">🔐 Login</Link>
+            <Link to="/register" className="btn btn-outline-light">🔐 Register</Link>
           </>
         )}
       </div>
-
-      <button className="btn btn-success">
+      <Link to="/cart" className="btn btn-success">
         🛒 Total: ${total.toLocaleString()}
-      </button>
+      </Link>
     </nav>
   );
 };

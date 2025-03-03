@@ -13,7 +13,7 @@ const Pizza = () => {
   useEffect(() => {
     const fetchPizza = async () => {
       try {
-        const response = await fetch("http://localhost:5173/api/pizzas/p001");
+        const response = await fetch("http://localhost:5000/api/pizzas/p001");
         const data = await response.json();
         setPizza(data);
       } catch (error) {
