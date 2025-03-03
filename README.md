@@ -1,23 +1,24 @@
-# Pizzería Mamma Mia! (Hito 4)
+# Pizzería Mamma Mia! (Hito 5)
 
-Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
+Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
 
 ## Características
 
 -   Interfaz moderna y responsive.
 -   Lista de pizzas con descripciones e ingredientes.
 -   Botones para ver más detalles y añadir al carrito.
--   Navbar con opciones de inicio de sesión y visualización del total del carrito.
+-   Navbar con opciones de navegación, inicio de sesión y visualización del total del carrito.
 -   Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
 -   Componente Login que contiene un formulario con los campos Email y Contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
--   Recorre el array de pizzas y renderiza un componente `CardPizza`.
--   **New!** Muestra la información de cada pizza utilizando props y renderiza los ingredientes en una lista.
--   **New!** Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad y calcula el total de la compra.
--   **New!** Muestra la información de una pizza específica en el componente `Pizza`.
+-   Navegación mediante React Router con rutas organizadas.
+-   **New!** Implementación de rutas para los componentes principales.
+-   **New!** Componente NotFound para manejar rutas inexistentes con un enlace de redirección a la página principal.
+-   **New!** Componente Profile que muestra el email de un usuario y un botón para cerrar sesión.
 
 ## Tecnologías Utilizadas
 
 -   **React**: Para la construcción de la interfaz de usuario.
+-   **React Router**: Para la gestión de rutas y navegación.
 -   **Bootstrap**: Para el diseño y la responsividad.
 -   **Firebase Storage**: Para alojar las imágenes de las pizzas.
 
@@ -36,9 +37,18 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
     npm install
     ```
 
-3.  Iniciar la aplicación:
+3.  Instalar Backend e iniciar:
 
     ```sh
+    cd src/backend
+    npm install
+    npm run dev
+    ```
+
+4.  Volver al Frontend e iniciar:
+
+    ```sh
+    cd ../..
     npm run dev
     ```
 
@@ -54,13 +64,17 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 ┃ ┣ 📂backend **New**
 ┃ ┣ 📂components
 ┃ ┃ ┣ 📜CardPizza.jsx
-┃ ┃ ┣ 📜RegisterPage.jsx
-┃ ┃ ┣ 📜LoginPage.jsx
 ┃ ┃ ┣ 📜Footer.jsx
 ┃ ┃ ┣ 📜Header.jsx
+┃ ┃ ┣ 📜Navbar.jsx **New**
+┃ ┣ 📂pages **New**
 ┃ ┃ ┣ 📜Home.jsx
-┃ ┃ ┣ 📜Navbar.jsx
-┃ ┃ ┗ 📜Pizza.jsx
+┃ ┃ ┣ 📜Register.jsx
+┃ ┃ ┣ 📜Login.jsx
+┃ ┃ ┣ 📜Cart.jsx
+┃ ┃ ┣ 📜Pizza.jsx
+┃ ┃ ┣ 📜Profile.jsx **New**
+┃ ┃ ┣ 📜NotFound.jsx **New**
 ┃ ┣ 📂data
 ┃ ┃ ┣ 📜pizzas.js
 ┃ ┣ 📜App.jsx
@@ -73,15 +87,25 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React y Bootstrap q
 ┗ 📜vite.config.js
 ```
 
+## Rutas Implementadas
+
+-   `/` -> Muestra el componente Home.
+-   `/register` -> Muestra el componente Register.
+-   `/login` -> Muestra el componente Login.
+-   `/cart` -> Muestra el componente Cart.
+-   `/pizza/p001` -> Muestra el componente Pizza.
+-   `/profile` -> Muestra el componente Profile.
+-   `/404` -> Muestra el componente NotFound.
+
 ## Componentes Principales
 
 ### `App.jsx`
 
-Componente principal que integra la barra de navegación, el contenido principal y el footer.
+Componente principal que integra la barra de navegación y define las rutas de la aplicación.
 
-### `Navbar.jsx`
+### `Navbar.jsx` **New!**
 
-Muestra el nombre de la pizzería, botones de navegación y el total del carrito.
+Muestra el nombre de la pizzería, botones de navegación y el total del carrito. Los botones de navegación redirigen a las rutas establecidas.
 
 ### `Home.jsx`
 
@@ -108,13 +132,21 @@ Componente que contiene un formulario con los campos Email, Contraseña y Confir
 
 Componente que contiene un formulario con los campos Email y Contraseña.
 
-### **New!** `Cart.jsx`
+### `Cart.jsx`
 
 Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad de pizzas y calcula el total de la compra.
 
-### **New!** `Pizza.jsx`
+###  `Pizza.jsx`
 
 Muestra la información de una pizza específica, incluyendo nombre, precio, ingredientes, imagen y descripción.
+
+###  `Profile.jsx` **New!**
+
+Muestra el email de un usuario y un botón estático para cerrar sesión (su funcionalidad será implementada en futuros hitos).
+
+### `NotFound.jsx` **New!**
+
+Componente que se muestra cuando la ruta no existe, con un enlace que redirige a la página principal.
 
 ## Contribución
 
@@ -128,6 +160,6 @@ Este proyecto es parte de un estudio académico y, por lo tanto, actualmente no 
 
 Este proyecto está bajo la licencia MIT.
 
-## Versión 4
+## Versión 5
 
-Este proyecto es presentado para el Hito 4.
+Este proyecto es presentado para el Hito 5.
