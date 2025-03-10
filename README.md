@@ -200,6 +200,6 @@ Este proyecto es parte de un estudio académico y, por lo tanto, actualmente no 
 
 Este proyecto está bajo la licencia MIT.
 
-## Versión 5
+## Versión 6
 
 Este proyecto es presentado para el Hito 6.
