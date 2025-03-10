@@ -7,7 +7,7 @@ const Navbar = () => {
   const token = false;
 
   return (
-    <nav className="navbar navbar-dark bg-dark my-navbar fixed-top">
+    <nav className="navbar navbar-dark bg-dark my-navbar">
       <div className="left-container">
         <span className="navbar-brand">🍕 Pizzería Mamma Mia!</span>
         <Link to="/" className="btn btn-outline-light">🏠 Home</Link>
