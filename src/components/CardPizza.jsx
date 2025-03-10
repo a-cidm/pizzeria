@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
 
-const CardPizza = ({ name, price, ingredients, img }) => (
+const CardPizza = ({ name, price, ingredients, img, onAddToCart }) => (
   <div className="card">
     <img src={img} className="card-img-top" alt={name} />
     <div className="card-body">
@@ -16,7 +16,7 @@ const CardPizza = ({ name, price, ingredients, img }) => (
       <p className="price">Precio: ${price.toLocaleString()}</p>
       <div className="buttons">
         <button className="btn btn-outline-dark">Ver Más 👀</button>
-        <button className="btn btn-dark ms-2">Añadir 🛒</button>
+        <button className="btn btn-dark ms-2" onClick={onAddToCart}>Añadir 🛒</button>
       </div>
     </div>
   </div>
@@ -27,6 +27,7 @@ CardPizza.propTypes = {
   price: PropTypes.number.isRequired,
   ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
   img: PropTypes.string.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
 export default CardPizza;

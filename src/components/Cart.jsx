@@ -1,23 +1,9 @@
-import React, { useState } from "react";
-import { pizzaCart, pizzas } from "../data/pizzas";
+import React from "react";
+import { useCart } from "../context/CartContext";
+import { pizzas } from "../data/pizzas";
 
 const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart);
-
-  const increaseCount = (id) => {
-    setCart(cart.map(pizza =>
-      pizza.id === id ? { ...pizza, count: pizza.count + 1 } : pizza
-    ));
-  };
-
-  const decreaseCount = (id) => {
-    setCart(cart
-      .map(pizza => (pizza.id === id ? { ...pizza, count: pizza.count - 1 } : pizza))
-      .filter(pizza => pizza.count > 0) // Elimina pizzas con count = 0
-    );
-  };
-
-  const total = cart.reduce((acc, pizza) => acc + pizza.price * pizza.count, 0);
+  const { cart, increaseCount, decreaseCount, total } = useCart();
 
   return (
     <div className="container">
@@ -27,7 +13,7 @@ const Cart = () => {
       ) : (
         <div>
           {cart.map((pizza) => {
-            const pizzaData = pizzas.find(p => p.id === pizza.id);
+            const pizzaData = pizzas.find((p) => p.id === pizza.id);
             return (
               <div key={pizza.id} className="cart-item d-flex align-items-center">
                 <img src={pizza.img} alt={pizza.name} className="cart-img" />

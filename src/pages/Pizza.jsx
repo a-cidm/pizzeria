@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useCart } from "../context/CartContext";
+import { usePizzas } from "../context/PizzaContext";
 
 // function to capitalize
 const toTitleCase = (str) => {
@@ -8,21 +10,12 @@ const toTitleCase = (str) => {
 };
 
 const Pizza = () => {
-  const [pizza, setPizza] = useState(null);
+  const { pizza, fetchPizzaById } = usePizzas();
+  const { addToCart } = useCart();
 
   useEffect(() => {
-    const fetchPizza = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/pizzas/p001");
-        const data = await response.json();
-        setPizza(data);
-      } catch (error) {
-        console.error("Error fetching pizza:", error);
-      }
-    };
-
-    fetchPizza();
-  }, []);
+    fetchPizzaById("p001");
+  }, [fetchPizzaById]);
 
   if (!pizza) {
     return <div>Loading...</div>;
@@ -44,7 +37,7 @@ const Pizza = () => {
             ))}
           </ul>
           <p>{pizza.desc}</p>
-          <button className="btn btn-dark">Añadir 🛒</button>
+          <button className="btn btn-dark" onClick={() => addToCart(pizza)}>Añadir 🛒</button>
         </div>
       </div>
     </div>
