@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-// Navbar.jsx
 const Navbar = () => {
   const { total } = useCart();
   const token = false;

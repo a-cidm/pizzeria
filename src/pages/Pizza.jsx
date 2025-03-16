@@ -1,21 +1,24 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { usePizzas } from "../context/PizzaContext";
 
 // function to capitalize
 const toTitleCase = (str) => {
+  if (!str) return "";
   return str.replace(/\w\S*/g, (txt) => {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 };
 
 const Pizza = () => {
+  const { id } = useParams(); // Get the pizza id from the URL
   const { pizza, fetchPizzaById } = usePizzas();
   const { addToCart } = useCart();
 
   useEffect(() => {
-    fetchPizzaById("p001");
-  }, [fetchPizzaById]);
+    fetchPizzaById(id); // Fetch pizza details using the id
+  }, [id, fetchPizzaById]);
 
   if (!pizza) {
     return <div>Loading...</div>;

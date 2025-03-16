@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext, useCallback } from "react";
 import PropTypes from "prop-types";
 
 const PizzaContext = createContext();
@@ -24,7 +24,7 @@ export const PizzaProvider = ({ children }) => {
     fetchPizzas();
   }, []);
 
-  const fetchPizzaById = async (id) => {
+  const fetchPizzaById = useCallback(async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/api/pizzas/${id}`);
       const data = await response.json();
@@ -32,7 +32,7 @@ export const PizzaProvider = ({ children }) => {
     } catch (error) {
       console.error("Error fetching pizza:", error);
     }
-  };
+  }, []);
 
   return (
     <PizzaContext.Provider value={{ pizzas, pizza, fetchPizzaById }}>
