@@ -1,4 +1,4 @@
-# Pizzería Mamma Mia! (Hito 6)
+# Pizzería Mamma Mia! (Hito 7)
 
 Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
 
@@ -14,7 +14,10 @@ Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router
 -   Implementación de rutas para los componentes principales.
 -   Componente NotFound para manejar rutas inexistentes con un enlace de redirección a la página principal.
 -   Componente Profile que muestra el email de un usuario y un botón para cerrar sesión.
--   **New!** Contextos para manejar el estado del carrito y los datos de las pizzas.
+-   Contextos para manejar el estado del carrito y los datos de las pizzas.
+-   **Update!** Componente `Pizza` que muestra la información detallada de una pizza específica.
+-   **Update!** Componente `Cart` que muestra el contenido del carrito de compras y permite modificar las cantidades de pizzas.
+-   **Update!** Componente `Navbar` actualizado para mostrar el total del carrito y opciones de autenticación.
 
 ## Tecnologías Utilizadas
 
@@ -41,13 +44,13 @@ npm install
 
 ### 3. Abrir dos terminales separadas
 
-- **Terminal 1**: Para ejecutar el backend  
-- **Terminal 2**: Para ejecutar el frontend  
+- **Terminal 1**: Para ejecutar el backend
+- **Terminal 2**: Para ejecutar el frontend
 
 ### 4. Iniciar el backend (Terminal 1)
 
 ```sh
-cd src/backend
+cd backend
 npm install
 npm run dev
 ```
@@ -70,8 +73,7 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 ### ⚠ Notas importantes:
 - **Ambos servidores deben estar corriendo simultáneamente.**
 - **Verifica que no haya conflictos de puertos en caso de estar ejecutando otros servicios.**
-- **Si es necesario cambiar el puerto del backend, edita la configuración en `src/backend/config.js` o el archivo de variables de entorno (`.env`).**
-
+- **Si es necesario cambiar el puerto del backend, edita la configuración en `backend/config.js` o el archivo de variables de entorno (`.env`).**
 
 ## Estructura del Proyecto
 
@@ -82,7 +84,6 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 ┃ ┣ 📂assets
 ┃ ┃ ┣ 📜Header.jpg
 ┃ ┃ ┗ 📜react.svg
-┃ ┣ 📂backend
 ┃ ┣ 📂components
 ┃ ┃ ┣ 📜CardPizza.jsx
 ┃ ┃ ┣ 📜Footer.jsx
@@ -98,9 +99,10 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 ┃ ┃ ┣ 📜NotFound.jsx
 ┃ ┣ 📂data
 ┃ ┃ ┣ 📜pizzas.js
-┃ ┣ 📂context **New**
+┃ ┣ 📂context **Update**
 ┃ ┃ ┣ 📜CartContext.jsx **New**
 ┃ ┃ ┣ 📜PizzaContext.jsx **New**
+┃ ┃ ┣ 📜UserContext.jsx **New**
 ┃ ┣ 📜App.jsx
 ┃ ┣ 📜index.css
 ┃ ┣ 📜main.jsx
@@ -109,6 +111,7 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 ┣ 📜package.json
 ┣ 📜README.md
 ┗ 📜vite.config.js
+📂backend
 ```
 
 ## Rutas Implementadas
@@ -117,7 +120,7 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 -   `/register` -> Muestra el componente Register.
 -   `/login` -> Muestra el componente Login.
 -   `/cart` -> Muestra el componente Cart.
--   `/pizza/p001` -> Muestra el componente Pizza.
+-   `/pizza/:id` -> Muestra el componente Pizza.
 -   `/profile` -> Muestra el componente Profile.
 -   `/404` -> Muestra el componente NotFound.
 
@@ -126,7 +129,7 @@ El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por V
 ### `App.jsx` **Update!**
 
 Componente principal que integra la barra de navegación y define las rutas de la aplicación.
-**Update!** Ahora envuelve la aplicación con `CartProvider` y `PizzaProvider`.
+**Update!** Ahora envuelve la aplicación con `CartProvider`, `PizzaProvider` y `UserProvider`.
 
 ### `Navbar.jsx` **Update!**
 
@@ -160,17 +163,17 @@ Componente que contiene un formulario con los campos Email, Contraseña y Confir
 
 Componente que contiene un formulario con los campos Email y Contraseña.
 
-### `Cart.jsx`
+### `Cart.jsx` **New!**
 
 Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad de pizzas y calcula el total de la compra.
 **Update!** Ahora consume `CartContext` y muestra, agrega y elimina artículos del carrito, y muestra el precio total.
 
-###  `Pizza.jsx`
+###  `Pizza.jsx` **New!**
 
 Muestra la información de una pizza específica, incluyendo nombre, precio, ingredientes, imagen y descripción.
 **Update!** Ahora consume `CartContext` y permite agregar la pizza mostrada al carrito.
 
-###  `Profile.jsx`
+###  `Profile.jsx` **Update!**
 
 Muestra el email de un usuario y un botón estático para cerrar sesión (su funcionalidad será implementada en futuros hitos).
 
@@ -188,18 +191,22 @@ Maneja el estado del carrito y proporciona funciones para agregar, aumentar y di
 
 Maneja los datos de las pizzas y proporciona funciones para obtener pizzas y detalles de pizzas individuales.
 
+### `UserContext.jsx` **New!**
+
+Maneja el estado de autenticación del usuario y proporciona funciones para iniciar y cerrar sesión.
+
 ## Contribución
 
 Este proyecto es parte de un estudio académico y, por lo tanto, actualmente no acepta contribuciones externas.
 
 ## Autor
 
-**Alberto Cid Montero** - [GitHub](https://github.com/a-cidm)
+**Alberto Cid Montero** - [GitHub](https://github.com/a-cidm/pizzeria)
 
 ## Licencia
 
 Este proyecto está bajo la licencia MIT.
 
-## Versión 6
+## Versión 7
 
-Este proyecto es presentado para el Hito 6.
+Este proyecto es presentado para el Hito 7.
