@@ -1,9 +1,17 @@
 //LoginPage.jsx
 import { useState } from "react";
+import { useUser } from "../context/UserContext";
+import { Navigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const { token } = useUser();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  if (token) {
+    return <Navigate to="/" />;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();

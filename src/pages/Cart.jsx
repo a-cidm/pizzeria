@@ -1,9 +1,11 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 import { pizzas } from "../data/pizzas";
 
 const Cart = () => {
   const { cart, increaseCount, decreaseCount, total } = useCart();
+  const { token } = useUser();
 
   return (
     <div className="container mt-4">
@@ -31,7 +33,7 @@ const Cart = () => {
             );
           })}
           <h3>Total: ${total.toLocaleString()}</h3>
-          <button className="btn btn-success">Pagar</button>
+          <button className="btn btn-success" disabled={!token}>Pagar</button>
         </div>
       )}
     </div>

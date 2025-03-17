@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+body {
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
 main {
   flex: 1;
 }

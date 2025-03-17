@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 const Navbar = () => {
   const { total } = useCart();
-  const token = false;
+  const { token, logout } = useUser();
 
   return (
     <nav className="navbar navbar-dark bg-dark my-navbar fixed-top">
@@ -13,7 +14,7 @@ const Navbar = () => {
         {token ? (
           <>
             <Link to="/profile" className="btn btn-outline-light">🔓 Profile</Link>
-            <button className="btn btn-outline-light">🔒 Logout</button>
+            <button className="btn btn-outline-light" onClick={logout}>🔒 Logout</button>
           </>
         ) : (
           <>
