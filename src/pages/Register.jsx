@@ -1,11 +1,9 @@
-//RegisterPage.jsx
 import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import { Navigate } from "react-router-dom";
 
 const RegisterPage = () => {
-  const { token } = useUser();
-
+  const { token, register } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -14,10 +12,9 @@ const RegisterPage = () => {
     return <Navigate to="/" />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validaciones con alert()
     if (!email || !password || !confirmPassword) {
       alert("Todos los campos son obligatorios");
       return;
@@ -33,10 +30,13 @@ const RegisterPage = () => {
       return;
     }
 
-    // Si pasa las validaciones, mostrar un mensaje de éxito
-    alert("¡Registro exitoso!");
+    try {
+      await register(email, password);
+      alert("¡Registro exitoso!");
+    } catch (error) {
+      alert("Error al registrar");
+    }
 
-    // Limpieza de valores
     setEmail("");
     setPassword("");
     setConfirmPassword("");

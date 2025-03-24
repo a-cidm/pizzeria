@@ -1,11 +1,9 @@
-//LoginPage.jsx
 import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import { Navigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const { token } = useUser();
-
+  const { token, login } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,10 +11,9 @@ const LoginPage = () => {
     return <Navigate to="/" />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validaciones con alert()
     if (!email || !password) {
       alert("Todos los campos son obligatorios");
       return;
@@ -27,10 +24,13 @@ const LoginPage = () => {
       return;
     }
 
-    // Si pasa las validaciones, mostrar un mensaje de éxito
-    alert("¡Login exitoso!");
+    try {
+      await login(email, password);
+      alert("¡Login exitoso!");
+    } catch (error) {
+      alert("Error al iniciar sesión");
+    }
 
-    // Limpieza de campos
     setEmail("");
     setPassword("");
   };

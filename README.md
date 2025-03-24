@@ -1,44 +1,47 @@
-# Pizzería Mamma Mia! (Hito 7)
+# Pizzería Mamma Mia! (Hito 8)
 
-Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras.
+Pizzería Mamma Mia! es una aplicación web desarrollada con React, React Router y Bootstrap que permite a los usuarios visualizar y agregar pizzas a su carrito de compras, además de autenticarse con un sistema real basado en JWT.
 
 ## Características
 
--   Interfaz moderna y responsive.
--   Lista de pizzas con descripciones e ingredientes.
--   Botones para ver más detalles y añadir al carrito.
--   Navbar con opciones de navegación, inicio de sesión y visualización del total del carrito.
--   Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
--   Componente Login que contiene un formulario con los campos Email y Contraseña. Además, existe un botón que al enviar el formulario muestra un mensaje de éxito.
--   Navegación mediante React Router con rutas organizadas.
--   Implementación de rutas para los componentes principales.
--   Componente NotFound para manejar rutas inexistentes con un enlace de redirección a la página principal.
--   Componente Profile que muestra el email de un usuario y un botón para cerrar sesión.
--   Contextos para manejar el estado del carrito y los datos de las pizzas.
--   **Update!** Componente `Pizza` que muestra la información detallada de una pizza específica.
--   **Update!** Componente `Cart` que muestra el contenido del carrito de compras y permite modificar las cantidades de pizzas.
--   **Update!** Componente `Navbar` actualizado para mostrar el total del carrito y opciones de autenticación.
+- Interfaz moderna y responsive.
+- Lista de pizzas con descripciones e ingredientes.
+- Botones para ver más detalles y añadir al carrito.
+- Navbar con opciones de navegación, inicio de sesión y visualización del total del carrito.
+- Componente Register que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña. Utiliza JWT para registrar al usuario en el backend.
+- Componente Login que contiene un formulario con los campos Email y Contraseña. Utiliza JWT para autenticar al usuario en el backend.
+- Autenticación real con backend utilizando JWT.
+- Envío de carrito de compras al backend como simulación de compra.
+- Navegación mediante React Router con rutas protegidas para usuarios autenticados.
+- Componente NotFound para manejar rutas inexistentes con un enlace de redirección a la página principal.
+- Componente Profile que muestra el email del usuario autenticado y un botón para cerrar sesión.
+- Contextos para manejar el estado del carrito, los datos de las pizzas y la sesión del usuario.
+- **Update!** Componente `Pizza` que muestra la información detallada de una pizza específica.
+- **Update!** Componente `Cart` que muestra el contenido del carrito de compras, permite modificar las cantidades de pizzas y enviar el carrito al backend.
+- **Update!** Componente `Navbar` actualizado para mostrar el total del carrito y opciones de autenticación dependiendo del estado del usuario.
+
 
 ## Tecnologías Utilizadas
 
--   **React**: Para la construcción de la interfaz de usuario.
--   **React Router**: Para la gestión de rutas y navegación.
--   **React Context**: Para la gestión global del estado de la aplicación.
--   **Bootstrap**: Para el diseño y la responsividad.
--   **Firebase Storage**: Para alojar las imágenes de las pizzas.
+- **React**: Para la construcción de la interfaz de usuario.
+- **React Router**: Para la gestión de rutas y navegación.
+- **React Context**: Para la gestión global del estado de la aplicación.
+- **Bootstrap**: Para el diseño y la responsividad.
+- **Firebase Storage**: Para alojar las imágenes de las pizzas.
+- **JWT**: Para autenticar usuarios con el backend.
 
 ## Instalación y Configuración
 
 ### 1. Clonar el repositorio y acceder al directorio del proyecto
 
-```sh
+```bash
 git clone https://github.com/a-cidm/pizzeria.git
 cd pizzeria
 ```
 
 ### 2. Instalar dependencias del frontend
 
-```sh
+```bash
 npm install
 ```
 
@@ -49,151 +52,104 @@ npm install
 
 ### 4. Iniciar el backend (Terminal 1)
 
-```sh
+```bash
 cd backend
 npm install
 npm run dev
 ```
 
-El backend estará disponible en `http://localhost:5000` (o el puerto configurado en el entorno).
+El backend estará disponible en `http://localhost:5000`.
 
 ### 5. Iniciar el frontend (Terminal 2)
 
-Asegúrate de estar en la raíz del proyecto antes de ejecutar el siguiente comando:
+Desde la raíz del proyecto:
 
-```sh
-cd pizzeria
+```bash
 npm run dev
 ```
 
-El frontend se ejecutará en `http://localhost:5173` (o el puerto asignado por Vite).
+El frontend se ejecutará en `http://localhost:5173`.
 
----
+### ⚠ Notas importantes
 
-### ⚠ Notas importantes:
-- **Ambos servidores deben estar corriendo simultáneamente.**
-- **Verifica que no haya conflictos de puertos en caso de estar ejecutando otros servicios.**
-- **Si es necesario cambiar el puerto del backend, edita la configuración en `backend/config.js` o el archivo de variables de entorno (`.env`).**
+- Ambos servidores deben estar corriendo simultáneamente.
+- Si hay conflicto de puertos, modifica `.env` o los archivos de configuración.
+- El token JWT se almacena temporalmente en memoria (no persiste al recargar la página).
 
 ## Estructura del Proyecto
 
 ```
+📂pizzeria
 ┣ 📂public
-┃ ┗ 📜vite.svg
 ┣ 📂src
 ┃ ┣ 📂assets
-┃ ┃ ┣ 📜Header.jpg
-┃ ┃ ┗ 📜react.svg
 ┃ ┣ 📂components
-┃ ┃ ┣ 📜CardPizza.jsx
-┃ ┃ ┣ 📜Footer.jsx
-┃ ┃ ┣ 📜Header.jsx
-┃ ┃ ┣ 📜Navbar.jsx
 ┃ ┣ 📂pages
-┃ ┃ ┣ 📜Home.jsx
-┃ ┃ ┣ 📜Register.jsx
-┃ ┃ ┣ 📜Login.jsx
-┃ ┃ ┣ 📜Cart.jsx
-┃ ┃ ┣ 📜Pizza.jsx
-┃ ┃ ┣ 📜Profile.jsx
-┃ ┃ ┣ 📜NotFound.jsx
 ┃ ┣ 📂data
-┃ ┃ ┣ 📜pizzas.js
-┃ ┣ 📂context **Update**
-┃ ┃ ┣ 📜CartContext.jsx **New**
-┃ ┃ ┣ 📜PizzaContext.jsx **New**
-┃ ┃ ┣ 📜UserContext.jsx **New**
+┃ ┣ 📂context
+┃ ┃ ┣ 📜CartContext.jsx
+┃ ┃ ┣ 📜PizzaContext.jsx
+┃ ┃ ┣ 📜UserContext.jsx
 ┃ ┣ 📜App.jsx
-┃ ┣ 📜index.css
 ┃ ┣ 📜main.jsx
-┣ 📜eslint.config.js
-┣ 📜index.html
-┣ 📜package.json
+┣ 📂backend
 ┣ 📜README.md
-┗ 📜vite.config.js
-📂backend
+┣ 📜package.json
 ```
 
 ## Rutas Implementadas
 
--   `/` -> Muestra el componente Home.
--   `/register` -> Muestra el componente Register.
--   `/login` -> Muestra el componente Login.
--   `/cart` -> Muestra el componente Cart.
--   `/pizza/:id` -> Muestra el componente Pizza.
--   `/profile` -> Muestra el componente Profile.
--   `/404` -> Muestra el componente NotFound.
+- `/` → Página de inicio.
+- `/register` → Registro de usuarios.
+- `/login` → Inicio de sesión.
+- `/cart` → Carrito de compras (requiere login).
+- `/pizza/:id` → Detalles de pizza.
+- `/profile` → Perfil del usuario autenticado.
+- `*` → Página 404 (NotFound).
 
 ## Componentes Principales
 
 ### `App.jsx` **Update!**
 
-Componente principal que integra la barra de navegación y define las rutas de la aplicación.
-**Update!** Ahora envuelve la aplicación con `CartProvider`, `PizzaProvider` y `UserProvider`.
+Componente principal que integra la barra de navegación y define las rutas de la aplicación. Ahora envuelve la app con `CartProvider`, `PizzaProvider` y `UserProvider`.
 
 ### `Navbar.jsx` **Update!**
 
-Muestra el nombre de la pizzería, botones de navegación y el total del carrito. Los botones de navegación redirigen a las rutas establecidas.
-**Update!** Ahora consume `CartContext` y muestra el precio total de los artículos en el carrito.
+Barra superior con navegación. Ahora detecta el estado del usuario y muestra las opciones correspondientes (`Login`, `Register`, `Profile`, `Logout`). También muestra el total del carrito.
 
-### `Home.jsx` **Update!**
+### `Login.jsx` y `Register.jsx` **Update!**
 
-Contiene el encabezado y la lista de pizzas disponibles.
-**Update!** Ahora consume `CartContext` y permite agregar pizzas al carrito desde la página principal.
+Ambos componentes ahora se comunican con el backend para autenticar o registrar usuarios. Muestran alertas de éxito o error según corresponda.
 
-### `CardPizza.jsx` **Update!**
+### `Profile.jsx` **Update!**
 
-Componente reutilizable para mostrar la información de cada pizza.
-Iterando por los ingredientes para renderizarlos en una lista.
-**Update!** Ahora acepta una prop `onAddToCart` y la llama cuando se hace clic en el botón "Añadir".
+Obtiene el email del usuario desde `/api/auth/me` y muestra un botón para cerrar sesión.
 
-### `Footer.jsx`
+### `Cart.jsx` **Update!**
 
-Pie de página con información de derechos reservados.
+Muestra el carrito visualmente, permite modificar cantidades y enviar el carrito al backend usando `/api/checkouts`. Muestra mensaje de éxito tras realizar la compra.
 
-### `Header.jsx`
+### `Pizza.jsx` **Update!**
 
-Encabezado principal con el nombre y lema de la pizzería.
-
-### `RegisterPage.jsx`
-
-Componente que contiene un formulario con los campos Email, Contraseña y Confirmar contraseña.
-
-### `LoginPage.jsx`
-
-Componente que contiene un formulario con los campos Email y Contraseña.
-
-### `Cart.jsx` **New!**
-
-Muestra la información de cada pizza en el carrito, permite aumentar y disminuir la cantidad de pizzas y calcula el total de la compra.
-**Update!** Ahora consume `CartContext` y muestra, agrega y elimina artículos del carrito, y muestra el precio total.
-
-###  `Pizza.jsx` **New!**
-
-Muestra la información de una pizza específica, incluyendo nombre, precio, ingredientes, imagen y descripción.
-**Update!** Ahora consume `CartContext` y permite agregar la pizza mostrada al carrito.
-
-###  `Profile.jsx` **Update!**
-
-Muestra el email de un usuario y un botón estático para cerrar sesión (su funcionalidad será implementada en futuros hitos).
+Muestra la información detallada de una pizza individual. Permite agregarla al carrito.
 
 ### `NotFound.jsx`
 
-Componente que se muestra cuando la ruta no existe, con un enlace que redirige a la página principal.
+Página de error 404 con enlace para volver al home.
 
 ## Contextos
 
-### `CartContext.jsx` **New!**
+### `CartContext.jsx`
 
-Maneja el estado del carrito y proporciona funciones para agregar, aumentar y disminuir artículos en el carrito.
+Maneja el estado del carrito y proporciona funciones para agregar, aumentar o disminuir productos.
 
-### `PizzaContext.jsx` **New!**
+### `PizzaContext.jsx`
 
-Maneja los datos de las pizzas y proporciona funciones para obtener pizzas y detalles de pizzas individuales.
+Maneja los datos de las pizzas y facilita su acceso desde cualquier componente.
 
-### `UserContext.jsx` **New!**
+### `UserContext.jsx` **Update!**
 
-Maneja el estado de autenticación del usuario y proporciona funciones para iniciar y cerrar sesión.
+Maneja autenticación: login, registro, cierre de sesión y obtención del perfil del usuario. Utiliza JWT.
 
 ## Contribución
 
@@ -201,12 +157,12 @@ Este proyecto es parte de un estudio académico y, por lo tanto, actualmente no 
 
 ## Autor
 
-**Alberto Cid Montero** - [GitHub](https://github.com/a-cidm/pizzeria)
+**Alberto Cid Montero** — [GitHub](https://github.com/a-cidm/pizzeria)
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT.
+MIT
 
-## Versión 7
+## Versión 8
 
-Este proyecto es presentado para el Hito 7.
+Este proyecto es presentado para el Hito 8.
